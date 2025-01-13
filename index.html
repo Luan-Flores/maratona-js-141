@@ -10,18 +10,20 @@
 <body>
     <div class="div-ex">
         <h1>Exercício 1</h1>
+        <h2 class="desc">Soma de dois números</h2>
         <input type="number" id="n1" placeholder="Numero 1:"> 
         <input type="number" id="n2" placeholder="Numero 2:">
         <button type="submit" onclick="somar()">Ok</button>
     </div>
     <div class="div-ex">
         <h1>Exercício 2</h1>
-        <input type="number" id="n3" placeholder="Numero 1:"> 
+        <h2 class="desc">É par ou ímpar</h2>
+        <input type="number" id="n3" placeholder="Numero:"> 
         <button type="submit" onclick="parimpar()">OK</button>
     </div>
     <div class="div-ex">
         <h1>Exercício 3</h1>
-        <h2>Do 1 ao 10</h2>
+        <h2>Contando 1 ao 10</h2>
         <button id="botao">Confirma</button>
         <button id="btn-clean">Limpar</button>
         <div id="divNum"></div>
@@ -29,8 +31,25 @@
     </div>
     <div class="div-ex">
         <h1>Exercício 4</h1>
+        <h2>Tabuada</h2>
+        <input type="number" id="tabu-input" placeholder="Até qual número?">
+        <button id="tabu-btn">Calcular</button>
+        <button id="btn-clean1">Limpar</button>
+        
+        <pre>
+            <div id="tabuResult">
+            </div>
+        </pre>
         
         <h2></h2>
+    </div>
+    <div class="div-ex">
+        <h1 class="titulo">Exercício 5</h1>
+        <h2 class="desc">Encontrar maior número de uma lista</h2>
+        <input id="maior-input" type="number" placeholder="Digite um número">
+        <button id="btn-maior">Ok</button>
+        <div id="div-lista"></div>
+        <div id="maiorResult"></div>
     </div>
 </body>
 <script src="./script.js"></script>

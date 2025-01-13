@@ -7,13 +7,6 @@
 
 
 
-5. Encontrar o Maior Número em uma Lista
-Descrição:
-Dado um array de números, encontre o maior valor.
-Tarefas:
-Crie um array como [3, 7, 2, 9, 5].
-Use um loop para comparar os números e encontrar o maior.
-Exiba o maior número no console.
 
 6. Inverter uma Palavra
 Descrição:
@@ -169,11 +162,66 @@ document.getElementById("btn-clean").addEventListener('click',function(){
 // Use um loop for para multiplicar o número de 1 a 10.
 // Exiba o resultado no console.
 
-function tabuada(){
+function tabuada(n){
+    
+    let na = Number(n);
+    let tabu = [];
     for (let i = 1; i < 11; i++){
-        
+        let resultado = i*na;
+        let frase = `${i} x ${na} = ${resultado}`;
+        tabu.push(frase);
+    }
+    return tabu;
+}
+//Escutador de evento para realizar o cálculo SE o número for digitado corretamente
+document.getElementById('tabu-btn').addEventListener('click',function(){
+    let numTabu = parseInt(document.getElementById('tabu-input').value);
+    if (isNaN(numTabu)) {
+        document.getElementById('tabuResult').innerText = "Por favor, insira um número válido.";
+        return;
+    }
+    document.getElementById('tabuResult').innerText = tabuada(numTabu).join('\n');
+})
+document.getElementById('btn-clean1').addEventListener('click',function(){
+    apagarTextoPorID("tabuResult");
+    document.getElementById('tabu-input').value = '';
+});
+
+// 5. Encontrar o Maior Número em uma Lista
+// Descrição:
+// Dado um array de números, encontre o maior valor.
+// Tarefas:
+// Crie um array como [3, 7, 2, 9, 5].
+// Use um loop para comparar os números e encontrar o maior.
+// Exiba o maior número no console.
+
+numLista = [];
+//funcao que mostra o maior da lista de numeros que o usuario inserir
+function mostrarMaior(){
+    numSolo = document.getElementById('maior-input').value;
+    numLista.push(numSolo);
+    let numMaior = Math.max.apply(null,numLista);
+    console.log(numMaior);
+    fraseResult = `O maior número da lista é: ${numMaior}`;
+    document.getElementById('div-lista').innerText = `${numLista}`;
+    return fraseResult;
+}
+ //funcao que verifica se o usuario nao inseriu um valor nulo
+function verificacao(){
+    if (document.getElementById('maior-input').value == ''){
+        document.getElementById('maiorResult').innerText = "Digite um número válido. ";
+    }else{
+        return true;
     }
 }
+document.getElementById('btn-maior').addEventListener('click',function(){
+    //condicao que impede a adicao de valores nulos à lista
+    if(verificacao()){
+        document.getElementById('maiorResult').innerText = mostrarMaior();
+        document.getElementById('maior-input').value = '';
+    }
+})
+
 
 
 
