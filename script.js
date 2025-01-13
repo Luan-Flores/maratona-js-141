@@ -142,16 +142,25 @@ function lupe(){
         result.push(i);
     }
     console.log(result);
-    const divNum = document.querySelector('div');
+    const divNum = document.getElementById('divNum');
     const paragrafo = document.createElement("p");
     paragrafo.innerText = "Contagem: " + result;
     divNum.appendChild(paragrafo);
-    
 }
 document.getElementById("botao").addEventListener('click',function(){
     // event.preventDefault;
     lupe();
 })
+
+//funçao p/ apagar o output dos exercicios ( ondeLimpar -> ID da tag a ser limpada
+function apagarTextoPorID(ondeLimpar){
+    document.getElementById(ondeLimpar).innerText = "";
+}
+document.getElementById("btn-clean").addEventListener('click',function(){
+    apagarTextoPorID("divNum");
+})
+
+
 // 4. Tabuada de um Número
 // Descrição:
 // Crie uma tabuada para um número informado pelo usuário.
