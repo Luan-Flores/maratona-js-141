@@ -1,32 +1,11 @@
-/*1. Soma de Dois Números
-Descrição:
-Peça ao usuário dois números e exiba a soma deles.
-Tarefas:
-Crie uma função soma que receba dois números como parâmetros.
-Exiba o resultado no console ou em um alert.
 
-2. Verificação de Par ou Ímpar
-Descrição:
-Peça ao usuário um número e diga se ele é par ou ímpar.
-Tarefas:
-Crie uma função que receba um número.
-Verifique se o número é divisível por 2.
-Exiba no console "O número é par" ou "O número é ímpar".
+/*hghfhg
 
-3. Contagem de Números
-Descrição:
-Exiba os números de 1 a 10 usando um loop.
-Tarefas:
-Utilize um loop for para imprimir os números no console.
-Modifique o exercício para usar um while.
 
-4. Tabuada de um Número
-Descrição:
-Crie uma tabuada para um número informado pelo usuário.
-Tarefas:
-Peça ao usuário um número.
-Use um loop for para multiplicar o número de 1 a 10.
-Exiba o resultado no console.
+
+
+
+
 
 5. Encontrar o Maior Número em uma Lista
 Descrição:
@@ -113,4 +92,86 @@ Crie uma lista de números pares entre 1 e 20.
 Tarefas:
 Use um loop para gerar os números pares.
 Adicione os números a um array e exiba-o no console.
+
+/*1. Soma de Dois Números
+Descrição:
+Peça ao usuário dois números e exiba a soma deles.
+Tarefas:
+Crie uma função soma que receba dois números como parâmetros.
+Exiba o resultado no console ou em um alert.
 */
+
+function somar(){
+    var n1 = parseInt(document.getElementById('n1').value);
+    var n2 = parseInt(document.getElementById('n2').value);
+    let result = n1 + n2;
+    alert("Resultado: " + result);
+}
+
+// 2. Verificação de Par ou Ímpar
+// Descrição:
+// Peça ao usuário um número e diga se ele é par ou ímpar.
+// Tarefas:
+// Crie uma função que receba um número.
+// Verifique se o número é divisível por 2.
+// Exiba no console "O número é par" ou "O número é ímpar".
+
+function parimpar(){
+    var n1 = parseInt(document.getElementById('n3').value);
+    console.log(n1);
+    
+    if (n1 % 2 == 0){
+        var result = "Par";
+    }else{
+        var result = "Ímpar";
+    }
+    alert("O número " + n1 + " é " + result);
+    
+}
+// 3. Contagem de Números
+// Descrição:
+// Exiba os números de 1 a 10 usando um loop.
+// Tarefas:
+// Utilize um loop for para imprimir os números no console.
+// Modifique o exercício para usar um while.
+function lupe(){
+    
+    let result = [];
+    
+    for (let i = 1; i < 11; i++){
+        result.push(i);
+    }
+    console.log(result);
+    const divNum = document.querySelector('div');
+    const paragrafo = document.createElement("p");
+    paragrafo.innerText = "Contagem: " + result;
+    divNum.appendChild(paragrafo);
+    
+}
+document.getElementById("botao").addEventListener('click',function(){
+    // event.preventDefault;
+    lupe();
+})
+// 4. Tabuada de um Número
+// Descrição:
+// Crie uma tabuada para um número informado pelo usuário.
+// Tarefas:
+// Peça ao usuário um número.
+// Use um loop for para multiplicar o número de 1 a 10.
+// Exiba o resultado no console.
+
+function tabuada(){
+    for (let i = 1; i < 11; i++){
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
