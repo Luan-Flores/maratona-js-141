@@ -165,6 +165,7 @@ document.getElementById("btn-clean").addEventListener('click',function(){
 function tabuada(n){
     
     let na = Number(n);
+    
     let tabu = [];
     for (let i = 1; i < 11; i++){
         let resultado = i*na;
