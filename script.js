@@ -13,28 +13,7 @@
 
 
 
-10. Verificar Palíndromo
-Descrição:
-Verifique se uma palavra informada pelo usuário é um palíndromo (lê-se igual de trás para frente).
-Tarefas:
-Crie uma função que receba uma string.
-Inverta a string e compare com o original.
-Exiba no console se a palavra é ou não um palíndromo.
 
-11. Contar Vogais em uma Frase
-Descrição:
-Dada uma frase, conte o número de vogais.
-Tarefas:
-Peça ao usuário uma frase.
-Use um loop para verificar cada caractere.
-Conte as vogais (a, e, i, o, u) e exiba o total.
-
-12. Gerar Números Aleatórios
-Descrição:
-Gere um número aleatório entre 1 e 100.
-Tarefas:
-Use a função Math.random e ajuste o intervalo para 1 a 100.
-Exiba o número gerado no console.
 
 13. Substituir Números Negativos por Zero
 Descrição:
@@ -278,8 +257,11 @@ function PON(numP) {
 // Crie uma função que receba um número.
 // Use um loop para multiplicar os números de 1 até o número informado.
 // Exiba o resultado no console.
-
+document.getElementById("btn-9").addEventListener('click', function() {
+    fatorial();
+});
 function fatorial(num){
+    num = document.getElementById("input-9").value;
     antecessor = num-1
     let fatorialNum = num
     while (antecessor > 0){
@@ -288,7 +270,8 @@ function fatorial(num){
         antecessor-=1;
 
     }
-    console.log(`"${num}! = ${fatorialNum}"`)
+    
+    document.getElementById("result-9").innerText = `${num}! = ${fatorialNum}`;
     
 }
 
@@ -300,18 +283,55 @@ function fatorial(num){
 // Crie uma função que receba uma string.
 // Inverta a string e compare com o original.
 // Exiba no console se a palavra é ou não um palíndromo.
-document.getElementById("btn-10").addEventListener('click',function(){
+document.getElementById("btn-10").addEventListener('click', function() {
     isPalindrome();
-})
-function isPalindrome(){
-    originalWord = document.getElementById("input-10").value.split("");
-    mixedWord = originalWord.reverse();
-    if (mixedWord == originalWord){
-        console.log(mixedWord + originalWord);
-        return console.log("É pal´nmdo");
-        
-    }else{
-        console.log(mixedWord + originalWord);
-        return console.log("nao é ");
+});
+
+function isPalindrome() {
+    // Pega o valor do input e remove espaços extras
+    const originalWord = document.getElementById("input-10").value.trim();
+    
+    
+    const reversedWord = originalWord.split("").reverse().join("");
+    
+    
+    if (originalWord === reversedWord) {
+        document.getElementById("result-10").innerText = "É palíndromo";
+    } else {
+        document.getElementById("result-10").innerText = "Não é palíndromo";
     }
+}
+
+// 11. Contar Vogais em uma Frase
+// Descrição:
+// Dada uma frase, conte o número de vogais.
+// Tarefas:
+// Peça ao usuário uma frase.
+// Use um loop para verificar cada caractere.
+// Conte as vogais (a, e, i, o, u) e exiba o total.
+document.getElementById("btn-11").addEventListener('click',function(){
+    vogaisEx();
+});
+document.getElementById("clear-11").addEventListener('click',function(){
+    apagarTextoPorID("result-11");
+})
+function vogaisEx(){
+    
+    let frase = document.getElementById("input-11").value.toLowerCase();
+    let vogais = "a,e,i,o,u";
+    let counter = 0;
+    for(let letra of frase){
+        if (vogais.includes(letra)){
+            counter++;
+        }
+    }
+    return document.getElementById("result-11").innerText = `A frase contém ${counter} vogais.`;
+}
+document.getElementById("btn-12").addEventListener('click',function(){
+    gerarAleatorio();
+});
+
+function gerarAleatorio(){
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+    console.log(randomNumber);
 }
