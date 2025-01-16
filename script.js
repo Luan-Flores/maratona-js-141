@@ -8,37 +8,10 @@
 
 
 
-6. Inverter uma Palavra
-Descrição:
-Peça ao usuário uma palavra e exiba-a invertida.
-Tarefas:
-Crie uma função que receba uma string.
-Converta a string para um array com o método split.
-Inverta a ordem com o método reverse e transforme novamente em string com join.
 
-7. Soma de Elementos de um Array
-Descrição:
-Calcule a soma dos elementos de um array.
-Tarefas:
-Crie um array como [1, 2, 3, 4, 5].
-Use um loop ou o método reduce para somar os valores.
-Exiba o resultado no console.
 
-8. Número Primo
-Descrição:
-Verifique se um número informado pelo usuário é primo.
-Tarefas:
-Crie uma função que receba um número.
-Verifique se ele é divisível apenas por 1 e por ele mesmo.
-Exiba "É primo" ou "Não é primo".
 
-9. Fatorial de um Número
-Descrição:
-Calcule o fatorial de um número informado pelo usuário.
-Tarefas:
-Crie uma função que receba um número.
-Use um loop para multiplicar os números de 1 até o número informado.
-Exiba o resultado no console.
+
 
 10. Verificar Palíndromo
 Descrição:
@@ -146,13 +119,16 @@ document.getElementById("botao").addEventListener('click',function(){
 })
 
 //funçao p/ apagar o output dos exercicios ( ondeLimpar -> ID da tag a ser limpada
-function apagarTextoPorID(ondeLimpar){
-    document.getElementById(ondeLimpar).innerText = "";
-}
+
+const apagarTextoPorID = (ondeLimpar) => document.getElementById(ondeLimpar).innerText = "";
+
+// function apagarTextoPorID(ondeLimpar)
+//     document.getElementById(ondeLimpar).innerText = "";
+// }
+
 document.getElementById("btn-clean").addEventListener('click',function(){
     apagarTextoPorID("divNum");
 })
-
 
 // 4. Tabuada de um Número
 // Descrição:
@@ -206,7 +182,7 @@ function mostrarMaior(){
     document.getElementById('div-lista').innerText = `${numLista}`;
     return fraseResult;
 }
- //funcao que verifica se o usuario nao inseriu um valor nulo
+//funcao que verifica se o usuario nao inseriu um valor nulo
 function verificacao(){
     if (document.getElementById('maior-input').value == ''){
         document.getElementById('maiorResult').innerText = "Digite um número válido. ";
@@ -222,13 +198,120 @@ document.getElementById('btn-maior').addEventListener('click',function(){
     }
 })
 
+// 6. Inverter uma Palavra
+// Descrição:
+// Peça ao usuário uma palavra e exiba-a invertida.
+// Tarefas:
+// Crie uma função que receba uma string.
+// Converta a string para um array com o método split.
+// Inverta a ordem com o método reverse e transforme novamente em string com join.
+document.getElementById("btn-6").addEventListener('click',function(){
+    inverterPalavra();
+})
+
+function inverterPalavra(){
+    
+    palavra = document.getElementById('input-6').value.split("").reverse().join("");
+    
+    
+    
+    const divWord = document.getElementById('result-6');
+    const paragrafo = document.createElement("p");
+    paragrafo.innerText = palavra;
+    divWord.appendChild(paragrafo);
+
+}
+document.getElementById("clear-6").addEventListener('click',function(){
+    apagarTextoPorID("result-6");
+})
+
+// 7. Soma de Elementos de um Array
+// Descrição:
+// Calcule a soma dos elementos de um array.
+// Tarefas:
+// Crie um array como [1, 2, 3, 4, 5].
+// Use um loop ou o método reduce para somar os valores.
+// Exiba o resultado no console.
+
+arroz = [1, 2, 3, 4, 5];
+soma = 0;
+arroz.forEach(element => {
+    soma += element;
+    return soma;
+});
+console.log(soma)
+
+// 8. Número Primo
+// Descrição:
+// Verifique se um número informado pelo usuário é primo.
+// Tarefas:
+// Crie uma função que receba um número.
+// Verifique se ele é divisível apenas por 1 e por ele mesmo.
+// Exiba "É primo" ou "Não é primo".
+
+//Primo Ou Nao
 
 
 
+function PON(numP) {
+    
+    if (numP <= 1) {
+        console.log("Não é primo");
+        return;
+    }
+
+    for (let i = 2; i <= (numP**(1/2)); i++) { 
+        if (numP % i === 0) {
+            console.log("Não é primo");
+            return;
+        }
+    }
+
+    console.log("É primo");
+}
 
 
+// 9. Fatorial de um Número
+// Descrição:
+// Calcule o fatorial de um número informado pelo usuário.
+// Tarefas:
+// Crie uma função que receba um número.
+// Use um loop para multiplicar os números de 1 até o número informado.
+// Exiba o resultado no console.
+
+function fatorial(num){
+    antecessor = num-1
+    let fatorialNum = num
+    while (antecessor > 0){
+
+        fatorialNum *= antecessor;
+        antecessor-=1;
+
+    }
+    console.log(`"${num}! = ${fatorialNum}"`)
+    
+}
 
 
-
-
-
+// 10. Verificar Palíndromo
+// Descrição:
+// Verifique se uma palavra informada pelo usuário é um palíndromo (lê-se igual de trás para frente).
+// Tarefas:
+// Crie uma função que receba uma string.
+// Inverta a string e compare com o original.
+// Exiba no console se a palavra é ou não um palíndromo.
+document.getElementById("btn-10").addEventListener('click',function(){
+    isPalindrome();
+})
+function isPalindrome(){
+    originalWord = document.getElementById("input-10").value.split("");
+    mixedWord = originalWord.reverse();
+    if (mixedWord == originalWord){
+        console.log(mixedWord + originalWord);
+        return console.log("É pal´nmdo");
+        
+    }else{
+        console.log(mixedWord + originalWord);
+        return console.log("nao é ");
+    }
+}
