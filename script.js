@@ -15,28 +15,8 @@
 
 
 
-13. Substituir Números Negativos por Zero
-Descrição:
-Dado um array de números, substitua todos os números negativos por zero.
-Tarefas:
-Crie um array como [4, -3, 2, -1, 0].
-Use um loop para verificar cada número.
-Substitua os números negativos por 0 e exiba o array no console.
 
-14. Verificar Palavras Proibidas em um Texto
-Descrição:
-Verifique se uma frase contém palavras proibidas.
-Tarefas:
-Crie um array de palavras proibidas como ['palavra1', 'palavra2'].
-Peça ao usuário uma frase.
-Verifique se a frase contém alguma palavra do array e exiba uma mensagem de alerta.
 
-15. Gerar uma Lista de Números Pares
-Descrição:
-Crie uma lista de números pares entre 1 e 20.
-Tarefas:
-Use um loop para gerar os números pares.
-Adicione os números a um array e exiba-o no console.
 
 /*1. Soma de Dois Números
 Descrição:
@@ -334,4 +314,76 @@ document.getElementById("btn-12").addEventListener('click',function(){
 function gerarAleatorio(){
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log(randomNumber);
+}
+
+// 13. Substituir Números Negativos por Zero
+// Descrição:
+// Dado um array de números, substitua todos os números negativos por zero.
+// Tarefas:
+// Crie um array como [4, -3, 2, -1, 0].
+// Use um loop para verificar cada número.
+// Substitua os números negativos por 0 e exiba o array no console.
+
+document.getElementById("btn-13").addEventListener('click', function(){
+    negativos();
+});
+function negativos() {
+    const negas = [4, -3, 2, -1, 0];
+    let i = 0;
+
+    for (let numiro of [...negas]) { // Cria uma cópia para evitar modificar enquanto itera
+        if (numiro < 0) {
+            console.log(`Número negativo encontrado no índice ${i}: ${numiro}`);
+            negas[i] = 0; // Substitui o número negativo por 0
+        } else {
+            console.log(`Nada no índice ${i}...`);
+        }
+        i++;
+    }
+
+    console.log("Array final:", negas);
+}
+
+// 14. Verificar Palavras Proibidas em um Texto
+// Descrição:
+// Verifique se uma frase contém palavras proibidas.
+// Tarefas:
+// Crie um array de palavras proibidas como ['palavra1', 'palavra2'].
+// Peça ao usuário uma frase.
+// Verifique se a frase contém alguma palavra do array e exiba uma mensagem de alerta.
+document.getElementById("btn-14").addEventListener('click', function(){
+    forbidden();
+})
+
+function forbidden(){
+    let fraseFree = document.getElementById("input-14").value;
+    const proibidas = ['butico'];
+    for(let i of [...proibidas]){
+        if(fraseFree == i){
+            alert(`Opa! palavra proibida: ${i}`);
+        }else{
+            alert("All clear!")
+        }
+    }
+}
+
+// 15. Gerar uma Lista de Números Pares
+// Descrição:
+// Crie uma lista de números pares entre 1 e 20.
+// Tarefas:
+// Use um loop para gerar os números pares.
+// Adicione os números a um array e exiba-o no console.
+
+document.getElementById("btn-15").addEventListener('click',function(){
+    listPares();
+})
+
+function listPares(){
+    const listaPares = [];
+    i=0;
+    while(i<20){
+        i+=2;
+        listaPares.push(i);
+    }
+    console.log(listaPares);
 }
